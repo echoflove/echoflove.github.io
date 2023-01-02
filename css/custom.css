@@ -1,3 +1,14 @@
+/*字体*/
+@font-face {
+  font-family: "Exo2";
+  src: url('/font/Exo2-Regular-14.otf') ,
+}
+
+body{
+    font-family: Exo2,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;;
+}
+
+
 /*左右栏调换*/
 .layout > div:first-child{
     order:2;
@@ -10,8 +21,84 @@
     padding-left: 0;
 }
 }
+/*左栏信息框*/
+#aside-content > .card-widget:first-child {
+    margin-top: 0;
+    background: linear-gradient(100deg, white, #ffffffde, transparent);
+}
 
-/*toc目录栏内容编剧*/
+/*toc目录栏内容边距*/
 #aside-content #card-toc .toc-content > *{
-    margin: 0 !important;
+
+}
+/*目录数字*/
+#aside-content #card-toc .toc-percentage {
+    float: right;
+    margin-top: -5px;
+    color: #a9a9a9;
+    font-style: italic;
+    font-size: 120%;
+    font-family: Exo2;
+}
+
+/*底部背景色哦*/
+#footer:before {
+    background: linear-gradient(to top, #fde9ee, transparent);
+    position: fixed;
+    bottom: 0;
+    max-height: 8vh;
+}
+
+
+/*顶部导航栏*/
+#page-header.nav-fixed #nav{
+    backdrop-filter: blur(16px);
+}
+
+/*页码数字按钮*/
+#pagination .page-number.current {
+    background: #dcd0c0;
+    color: var(--white);
+}
+
+
+/*h1分级标题图标*/
+#article-container.post-content h1:before, #article-container.post-content h2:before, #article-container.post-content h3:before, #article-container.post-content h4:before, #article-container.post-content h5:before, #article-container.post-content h6:before {
+    position: absolute;
+    top: calc(50% - 7px);
+    color: #fabebb;
+    content: '\f02c';
+    line-height: 1;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    animation: rotate 6s linear infinite
+}
+
+/*链接*/
+#article-container a {
+    color: #d4b4b4;
+    display:inline-block;
+    transition: 0.2s all ease-in;
+}
+#article-container a:hover {
+    text-decoration:none;
+    text-shadow: 0 0 10px white;
+    transform: translateY(-2px);
+    color:#d2abab;
+}
+
+/*鼠标选中文本*/
+::selection{
+  background-color:#d4b4b4;
+  color:#FFF;
+}
+
+
+:root{
+    --btn-hover-color: #edd8d6;
+    --btn-bg: #dcd0c0;
+    --font-color: #6c6663;
 }
