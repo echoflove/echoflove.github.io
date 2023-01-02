@@ -1,0 +1,17 @@
+/*左右栏调换*/
+.layout > div:first-child{
+    order:2;
+}
+
+/*左栏边距对应调整*/
+@media screen and (min-width: 900px){
+#aside-content {
+    padding-right: 15px;
+    padding-left: 0;
+}
+}
+
+/*toc目录栏内容编剧*/
+#aside-content #card-toc .toc-content > *{
+    margin: 0 !important;
+}
