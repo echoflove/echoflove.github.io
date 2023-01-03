@@ -1,7 +1,11 @@
 /*字体*/
 @font-face {
   font-family: "Exo2";
-  src: url('https://echoflove.github.io/font/Exo2-Regular-14.otf') format('opentype'),
+  src: url('/font/Exo2-Regular-14.ttf') format('truetype'),
+}
+@font-face {
+  font-family: "Exo";
+  src: url('https://echoflove.github.io/font/Exo2-Regular-14.ttf') format('truetype'),
 }
 @font-face {
   font-family: "SiYuanSongTi";
