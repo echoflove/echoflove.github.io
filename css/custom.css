@@ -1,7 +1,7 @@
 /*字体*/
 @font-face {
   font-family: "Exo2";
-  src: url('/font/Exo2-Regular-14.ttf') format('truetype'),
+  src: url('../font/Exo2-Regular-14.ttf') format('truetype'),
 }
 @font-face {
   font-family: "Exo";
