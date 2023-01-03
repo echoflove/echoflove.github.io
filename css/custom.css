@@ -3,11 +3,19 @@
   font-family: "Exo2";
   src: url('/font/Exo2-Regular-14.otf') ,
 }
+@font-face {
+  font-family: "SiYuanSongTi";
+  src: url('/font/NotoSerifSC-Regular.otf') ,
+}
 
 body{
     font-family: Exo2,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;;
 }
 
+/*适配宽屏*/
+.layout{
+    max-width:1400px
+}
 
 /*左右栏调换*/
 .layout > div:first-child{
@@ -19,6 +27,7 @@ body{
 #aside-content {
     padding-right: 15px;
     padding-left: 0;
+    max-width:312px;
 }
 }
 /*左栏信息框*/
@@ -136,6 +145,20 @@ body{
 
 
 /*导航栏*/
+#nav-right{
+    flex:1 1 auto;
+    justify-content: flex-end;
+    margin-left: auto;
+    display: flex;
+    flex-wrap:nowrap;
+}
+
+
+/*作者: Ariasaka
+链接: https://yisous.xyz/posts/895003b5/#%E5%88%86%E7%A6%BB%E6%90%9C%E7%B4%A2%E6%A0%8F%E4%B8%8E%E8%8F%9C%E5%8D%95%E6%A0%8F
+来源: Ariasakaの小窝
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。*/
+
 .nav-fixed #nav{
     transform: translateY(58px)!important;
     -webkit-transform: translateY(58px)!important;
@@ -208,6 +231,14 @@ body{
 }
 
 
+
+
+
+
+/*首页文章标题*/
+#recent-posts > .recent-post-item >.recent-post-info > .article-title {
+    font-family:SiYuanSongTi
+}
 
 :root{
     --btn-hover-color: #edd8d6;
