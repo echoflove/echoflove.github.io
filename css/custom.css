@@ -347,6 +347,7 @@ a#page-name {
     font-size: .8125em;
     align-items: center;
     flex-wrap: wrap;
+    margin-bottom:24px;
 }
 a.post-meta-categories:last-child {
     color: #e9546b;
