@@ -25,15 +25,15 @@ body{
 .layout > div:first-child{
     order:2;
 }
-@media screen and (max-width: 900px)
+@media screen and (max-width: 900px){
 .layout > div:first-child {
     width: 100% !important;
     order: 0!important;
-}
-@media screen and (max-width: 900px)
+}}
+@media screen and (max-width: 900px){
 #aside-content {
     width: 100%!important;
-}
+}}
 
 /*左栏边距对应调整*/
 @media screen and (min-width: 900px){
