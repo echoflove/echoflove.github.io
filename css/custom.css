@@ -136,6 +136,7 @@ body{
 #article-container figure.highlight .gutter pre {
     background-color: #ffffff;
     color: rgb(198 169 168);
+    box-shadow: 0 5px 4px 0 rgb(144 164 174 / 40%)
 }
 #article-container .highlight-tools {
     background: #eedbd991;
@@ -241,8 +242,15 @@ body{
 
 /*首页文章标题*/
 #recent-posts > .recent-post-item >.recent-post-info > .article-title {
-    font-family:SiYuanSongTi
+    font-family: 'Noto Serif Sc';
+    color: #bdbbbb;
+    font-size:x-large;
+    font-weight:700;
 }
+
+
+
+
 
 :root{
     --btn-hover-color: #edd8d6;
