@@ -1,9 +1,5 @@
 /*字体*/
 @font-face {
-  font-family: "Exo2";
-  src: url('/font/Exo2-Regular-14.ttf'
-}
-@font-face {
   font-family: 'Exo';
   src: url('Exo2-Regular-14.ttf')
 }
@@ -378,6 +374,14 @@ a.post-meta-categories:last-child {
     padding:20px 40px 40px;
 }
 
+
+
+/*文章内图片*/
+#article-container img {
+    margin:0;
+    border: 1px dotted;
+    padding: 8px
+}
 
 :root{
     --btn-hover-color: #edd8d6;
