@@ -24,7 +24,7 @@
     width: 100%!important;
 }}
 
-/*左栏边距对应调整*/
+/*左栏侧边栏边距对应调整*/
 @media screen and (min-width: 900px){
 #aside-content {
     padding-right: 15px;
@@ -103,6 +103,36 @@
     font-style: italic;
     font-size: 120%;
     font-family: Exo2;
+}
+
+/*侧边栏系列文章*/
+.card-widget.card-serious .item-headline i {
+    color: #eec0be;
+}
+
+.card-serious li:before{
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    background: pink;
+    box-sizing: unset;
+    left: -1.25rem;
+    top: 0.3125rem;
+    border-radius: 100%;
+    position: absolute;
+    border: 0.1875rem solid var(--grey-1);
+    z-index: 1;
+    transition: all .2s ease-in-out 0s;
+}
+
+.card-serious li:not(:last-child)::after {
+    content: "";
+    height: 100%;
+    width: 0.125rem;
+    background: red
+    position: absolute;
+    left: -0.875rem;
+    top: 0.5rem;
 }
 
 /*底部背景色哦*/
