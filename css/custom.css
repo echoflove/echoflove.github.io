@@ -124,6 +124,30 @@ body{
     max-height: 8vh;
 }
 
+/*底部power标签哦*/
+.badge-subject {
+    background: #0000005e;
+    padding: 2px 6px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 8px;
+}
+.badge-value{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 2px 6px;
+    color: white;
+}
+.badge-framework{
+    background:#ba94ff
+}
+.badge-theme {
+    background:#ffa6a6;
+}
+.badge-service {
+    background:#6bc0f0
+}
 
 /*顶部导航栏*/
 #page-header.nav-fixed #nav{
