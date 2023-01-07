@@ -107,7 +107,7 @@
 
 /*侧边栏系列文章*/
 .series-active {
-    color:pink
+    color:pink!important;
 }
 .card-widget.card-series .item-headline i {
     color: #ee8b9b;
