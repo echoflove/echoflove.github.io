@@ -106,18 +106,23 @@
 }
 
 /*侧边栏系列文章*/
-.card-widget.card-serious .item-headline i {
-    color: #eec0be;
+.series-active {
+    color:pink
 }
-
-.card-serious li:before{
+.card-widget.card-series .item-headline i {
+    color: #ee8b9b;
+}
+.card-series li {
+    position:relative
+}
+.card-series li:before{
     content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    background: pink;
+    width: 0.4rem;
+    height: 0.4rem;
+    background: #e9546bb3;
     box-sizing: unset;
     left: -1.25rem;
-    top: 0.3125rem;
+    top: 0.8rem;
     border-radius: 100%;
     position: absolute;
     border: 0.1875rem solid var(--grey-1);
@@ -125,14 +130,35 @@
     transition: all .2s ease-in-out 0s;
 }
 
-.card-serious li:not(:last-child)::after {
+.card-series li:not(:last-child)::after {
     content: "";
-    height: 100%;
+    height: 75%;
     width: 0.125rem;
-    background: red
+    background: rgb(233 84 107 / 36%);
     position: absolute;
-    left: -0.875rem;
-    top: 0.5rem;
+    left: -1.1rem;
+    top: 1.27rem;
+}
+
+.card-series li::marker {
+    color:transparent;
+}
+ul.series-ul {
+    margin-top: 0;
+    margin-left: -1rem;
+}
+/*系列文章的链接*/
+.card-series a {
+    color: #918587;
+    margin-left: -0.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    display: inline-block;
+}
+.card-series a:hover {
+    color: #c69fa5;
 }
 
 /*底部背景色哦*/
