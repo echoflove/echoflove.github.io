@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【Butterfly】在侧边栏添加系列文章 | SeeWind</title><meta name="author" content="漱冰濯雪"><meta name="copyright" content="漱冰濯雪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="其实想加上这个功能也是因为Shoka主题，而且也确实很好用www不需要点进分类里就可以方便的概览同一系列的文章啦！而且新增加一个“系列”而不是使用分类也感觉更灵活了wwww（就是得多写一个front-matter了）话不多说，下面开始吧！ 参考链接hexo,butterfly添加系列文章功能（二级目录）代码基本来源于这个链接喏……不过这位博主安放目录的地方是在文章正文，如果你想要和我一样把它加在侧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Butterfly】在侧边栏添加系列文章">
+<meta property="og:url" content="http://example.com/posts/15346/index.html">
+<meta property="og:site_name" content="SeeWind">
+<meta property="og:description" content="其实想加上这个功能也是因为Shoka主题，而且也确实很好用www不需要点进分类里就可以方便的概览同一系列的文章啦！而且新增加一个“系列”而不是使用分类也感觉更灵活了wwww（就是得多写一个front-matter了）话不多说，下面开始吧！ 参考链接hexo,butterfly添加系列文章功能（二级目录）代码基本来源于这个链接喏……不过这位博主安放目录的地方是在文章正文，如果你想要和我一样把它加在侧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/Banner.jpg">
+<meta property="article:published_time" content="2023-01-10T06:53:58.000Z">
+<meta property="article:modified_time" content="2023-01-10T07:21:29.043Z">
+<meta property="article:author" content="漱冰濯雪">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/Banner.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/15346/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Butterfly】在侧边栏添加系列文章',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-10 15:21:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"JviV32HfWeLWAObz",ck:"JviV32HfWeLWAObz"})</script><script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script>new LingQue.Monitor().init({id:"JviWG5tpjJ71Tl19"});</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/Banner.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SeeWind</a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"></div></nav><div id="post-info"><h1 class="post-title">【Butterfly】在侧边栏添加系列文章</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-10T06:53:58.000Z" title="发表于 2023-01-10 14:53:58">2023-01-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-10T07:21:29.043Z" title="更新于 2023-01-10 15:21:29">2023-01-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">975</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Butterfly】在侧边栏添加系列文章"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><div class="breadcrumb"><i class="fas fa-home"></i><a href="/">首页</a><i class="fas fa-angle-right"></i><span class="post-meta-categories"><span class="post-meta-separator"> </span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/">博客相关</a></span></div><article class="post-content" id="article-container"><p>其实想加上这个功能也是因为<a target="_blank" rel="noopener" href="https://shoka.lostyu.me/">Shoka主题</a>，而且也确实很好用www<br>不需要点进分类里就可以方便的概览同一系列的文章啦！而且新增加一个“系列”而不是使用分类也感觉更灵活了wwww（就是得多写一个<code>front-matter</code>了）<br>话不多说，下面开始吧！</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43404937/article/details/122584865">hexo,butterfly添加系列文章功能（二级目录）</a><br>代码基本来源于这个链接喏……不过这位博主安放目录的地方是在文章正文，如果你想要和我一样把它加在侧边栏，可以直接跟随下面的步骤！</p>
+<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>请看侧边栏～<br><img src="https://image-1306935353.cos.ap-guangzhou.myqcloud.com/hexo-image/202301101519880.jpg"></p>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><ol>
+<li><p>新建一个<code>card_series.pug</code>文件来存放代码，我为了管理方便，在<code>themes/butterfly/layout/includes</code>下新建了一个<code>custom</code>文件夹来存放我的自定义修改，你也可以在主题原本用来存放侧边栏卡片的文件夹<code>themes/butterfly/layout/includes/widget</code>下建立哦。</p>
+</li>
+<li><p>参照上面的参考链接，文件内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//- 添加二級目錄 start</span><br><span class="line">if page.series</span><br><span class="line">  .card-widget.card-series</span><br><span class="line">    .item-headline</span><br><span class="line">      i.fas.fa-sitemap</span><br><span class="line">      //-span #&#123;page.series&#125;系列文章 </span><br><span class="line">      span 系列文章</span><br><span class="line">    ul.series-ul</span><br><span class="line">      - let list = site.posts.sort(&#x27;date&#x27;, 1)</span><br><span class="line">      - list.each(function(article)&#123;</span><br><span class="line">        if article.series == page.series</span><br><span class="line">          - let link = article.link || article.path</span><br><span class="line">          - let title = article.title || _p(&#x27;no_title&#x27;)</span><br><span class="line">          if article.title == page.title</span><br><span class="line">            li</span><br><span class="line">              a.series-active(href=url_for(link) title=title)= title</span><br><span class="line">          else </span><br><span class="line">            li</span><br><span class="line">              a.series-title(href=url_for(link) title=title)= title</span><br><span class="line">      - &#125;)</span><br><span class="line">//- 添加二級目錄 end</span><br></pre></td></tr></table></figure>
+<p>其中我加以修改了的部分：<br>在代码的第6行，被我注释掉的<code>span #&#123;page.series&#125;系列文章 </code>，如果你想在系列文章小标题的前面显示系列的名字，可以把它取消注释，（然后把下一行删掉）。<br>在代码的第14行开始，添加了一个条件判断：如果文章名&#x3D;当前文章，就为它添加一个<code>series-active</code>的样式，用于突出当前文章在系列中的位置。</p>
+</li>
+<li><p>在侧边栏中引用。主题用来控制侧边栏的文件是：<code>themes/butterfly/layout/includes/widget/index.pug</code>，我摸索了一下，只需要在文章页显示系列文章的话，就只用关注这一段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#aside-content.aside-content</span><br><span class="line">  //- post</span><br><span class="line">  if is_post()</span><br><span class="line">    - const tocStyle = page.toc_style_simple</span><br><span class="line">    - const tocStyleVal = tocStyle === true || tocStyle === false ? tocStyle : theme.toc.style_simple</span><br><span class="line">    if showToc &amp;&amp; tocStyleVal</span><br><span class="line">      .sticky_layout</span><br><span class="line">        include ./card_post_toc.pug</span><br><span class="line">    else</span><br><span class="line">      //- 文章页的侧边栏</span><br><span class="line">      !=partial(&#x27;includes/widget/card_author&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_announcement&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      !=partial(&#x27;includes/widget/card_top_self&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">      .sticky_layout</span><br><span class="line">        //- 需要sticky样式的卡片</span><br><span class="line">        if showToc</span><br><span class="line">          include ./card_post_toc.pug</span><br><span class="line">        !=partial(&#x27;includes/widget/card_recent_post&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">        !=partial(&#x27;includes/widget/card_ad&#x27;, &#123;&#125;, &#123;cache: true&#125;)</span><br><span class="line">        </span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>如果你想要和我一样把它加在目录的上方并且需要sticky样式的话， 就在<code> 需要sticky样式的卡片</code>这行注释的下一行加入<code>!=partial(&#39;includes/custom/card_series&#39;, &#123;&#125;, &#123;cache:true&#125;)</code>即可，注意缩进要与<code>if showToc</code>对齐。如果不需要sticky样式，就加在<code>.sticky_layout</code>的上面，根据你想要它位于怎么样的顺序自行调整吧～</p>
+<ol start="4">
+<li>样式调整。我的样式是仿照<a target="_blank" rel="noopener" href="https://shoka.lostyu.me/">Shoka主题</a>改的，你可以根据我的css加以调整改动！<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/*侧边栏系列文章*/</span><br><span class="line">.series-active &#123;</span><br><span class="line">    color:pink!important;</span><br><span class="line">&#125;</span><br><span class="line">.card-widget.card-series .item-headline i &#123;</span><br><span class="line">    color: #ee8b9b;</span><br><span class="line">&#125;</span><br><span class="line">.card-series li &#123;</span><br><span class="line">    position:relative</span><br><span class="line">&#125;</span><br><span class="line">.card-series li:before&#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    width: 0.4rem;</span><br><span class="line">    height: 0.4rem;</span><br><span class="line">    background: #e9546bb3;</span><br><span class="line">    box-sizing: unset;</span><br><span class="line">    left: -1.25rem;</span><br><span class="line">    top: 0.8rem;</span><br><span class="line">    border-radius: 100%;</span><br><span class="line">    position: absolute;</span><br><span class="line">    border: 0.1875rem solid var(--grey-1);</span><br><span class="line">    z-index: 1;</span><br><span class="line">    transition: all .2s ease-in-out 0s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.card-series li:not(:last-child)::after &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    height: 75%;</span><br><span class="line">    width: 0.125rem;</span><br><span class="line">    background: rgb(233 84 107 / 36%);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: -1.1rem;</span><br><span class="line">    top: 1.27rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.card-series li::marker &#123;</span><br><span class="line">    color:transparent;</span><br><span class="line">&#125;</span><br><span class="line">ul.series-ul &#123;</span><br><span class="line">    margin-top: 0;</span><br><span class="line">    margin-left: -1rem;</span><br><span class="line">&#125;</span><br><span class="line">/*系列文章的链接*/</span><br><span class="line">.card-series a &#123;</span><br><span class="line">    color: #918587;</span><br><span class="line">    margin-left: -0.2rem;</span><br><span class="line">    text-overflow: ellipsis;</span><br><span class="line">    white-space: nowrap;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    width: 100%;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.card-series a:hover &#123;</span><br><span class="line">    color: #c69fa5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">漱冰濯雪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/15346/">http://example.com/posts/15346/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">SeeWind</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/Banner.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/61716/"><img class="prev-cover" src="/img/Banner.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【Butterfly】为文章页添加面包屑导航</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">漱冰濯雪</div><div class="author-info__description">客里携月等，凌然意天风。</div></div><div class="card-info-data site-data is-center"><a href="/categories/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-series"><div class="item-headline"><i class="fas fa-sitemap"></i><span>系列文章</span></div><ul class="series-ul"><li><a class="series-title" href="/posts/16107/" title="Hello World">Hello World</a></li><li><a class="series-title" href="/posts/35493/" title="站点使用插件记录">站点使用插件记录</a></li><li><a class="series-title" href="/posts/61716/" title="【Butterfly】为文章页添加面包屑导航">【Butterfly】为文章页添加面包屑导航</a></li><li><a class="series-active" href="/posts/15346/" title="【Butterfly】在侧边栏添加系列文章">【Butterfly】在侧边栏添加系列文章</a></li></ul></div><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="toc-number">1.</span> <span class="toc-text">参考链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">实现方法</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 漱冰濯雪</div><div class="footer_custom_text"><div class="footer-badget"><span class="badge-subject">Powered</span><span class="badge-value badge-framework"><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></span><span class="badge-subject">Theme</span><span class="badge-value badge-theme"><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></span><span class="badge-subject">Service</span><span class="badge-value badge-service"><a target="_blank" rel="noopener" href="https://cloud.tencent.com">Tencent Cloud</a></span></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-api-eosin.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-api-eosin.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://code.jquery.com/jquery-latest.js"></script><script src="/js/sakura.js"></script><script src="/js/nav.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
